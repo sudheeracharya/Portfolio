@@ -6,10 +6,6 @@ A modern, responsive portfolio website showcasing my journey as a Full Stack Dev
 
 Visit my portfolio: [sudheeracharya.github.io/Portfolio](https://sudheeracharya.github.io/Portfolio)
 
-## 📸 Preview
-
-![Portfolio Preview](https://via.placeholder.com/800x400/1f2937/ffffff?text=Portfolio+Preview)
-
 ## ✨ Features
 
 - **Responsive Design**: Seamlessly adapts to all device sizes
