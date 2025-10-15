@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
               }}
             />
             <motion.div 
-              className="absolute inset-0 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden"
+              className="absolute inset-1 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden"
               whileHover={{ scale: 1.05 }}
             >
               <img 
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
           >
             <motion.button
               onClick={scrollToAbout}
-              className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+              className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-[...]"
               whileHover={{ 
                 scale: 1.05, 
                 boxShadow: "0 20px 40px rgba(139, 92, 246, 0.4)" 
@@ -158,7 +158,7 @@ const Hero: React.FC = () => {
               href="https://drive.google.com/file/d/11HG7b6Uy0PAKZmb3yqmPsVsClbTBN82Q/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-purple-400/50 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              className="group border border-purple-400/50 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 flex items-[...]"
               whileHover={{ 
                 scale: 1.05,
                 backgroundColor: "rgba(139, 92, 246, 1)",
