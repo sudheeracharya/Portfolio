@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my journey as a Full Stack Dev
 
 ## 🌟 Live Demo
 
-Visit my portfolio: [sudheeracharya.github.io/Portfolio](https://sudheeracharya.github.io/Portfolio)
+Visit my portfolio: https://portfolio-one-weld-21.vercel.app/
 
 ## ✨ Features
 
