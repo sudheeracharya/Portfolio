@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Download } from 'lucide-react';
 
+const PROFILE_IMG = "https://photos.fife.usercontent.google.com/pw/AP1GczPG_Bjn9sXRFK-ZZMIYIHfboYuVsVmlIQzDv2knjQoXWqS-VD8hfIs=w727-h727-s-no-gm?authuser=0";
+
 const Hero: React.FC = () => {
   const scrollToAbout = () => {
     const element = document.getElementById('about');
@@ -11,9 +13,12 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20"
+    >
       {/* Animated Background Elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <motion.div 
           className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"
           animate={{
@@ -44,7 +49,8 @@ const Hero: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-3xl"
+          style={{ transform: "translate(-50%, -50%)" }}
           animate={{
             rotate: [0, 360],
             scale: [1, 1.1, 1]
@@ -60,13 +66,14 @@ const Hero: React.FC = () => {
         <div className="space-y-8">
           {/* Profile Image */}
           <motion.div 
-            className="relative mx-auto w-32 h-32 mb-8"
+            className="mx-auto w-32 h-32 mb-8 relative"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
           >
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+            {/* Gradient border */}
+            <motion.div
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-blue-400"
               animate={{
                 rotate: [0, 360],
                 scale: [1, 1.1, 1]
@@ -75,19 +82,21 @@ const Hero: React.FC = () => {
                 rotate: { duration: 8, repeat: Infinity, ease: "linear" },
                 scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
               }}
+              style={{ zIndex: 1 }}
             />
-            <motion.div 
-              className="absolute inset-0 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img 
-                src="https://photos.fife.usercontent.google.com/pw/AP1GczPG_Bjn9sXRFK-ZZMIYIHfboYuVsVmlIQzDv2knjQoXWqS-VD8hfIs=w727-h727-s-no-gm?authuser=0"
+            {/* Profile Image */}
+            <div className="absolute inset-2 rounded-full overflow-hidden bg-gray-900 flex items-center justify-center" style={{ zIndex: 2, width: '88px', height: '88px' }}>
+              <img
+                src={PROFILE_IMG}
                 alt="Sudheer Kumar R"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full select-none"
+                draggable={false}
+                style={{ display: "block" }}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
+          {/* Name and Subtitle */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,6 +128,7 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
 
+          {/* About blurb */}
           <motion.p 
             className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
@@ -130,6 +140,7 @@ const Hero: React.FC = () => {
             in Spring Boot, React, and Machine Learning.
           </motion.p>
 
+          {/* Buttons */}
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
             initial={{ opacity: 0, y: 30 }}
@@ -150,7 +161,7 @@ const Hero: React.FC = () => {
                 animate={{ y: [0, 3, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <ArrowDown className="w-4 h-4" />
+                <ArrowDown className="w-4 h-4 inline ml-2" />
               </motion.div>
             </motion.button>
             
